@@ -1,8 +1,30 @@
-//
-//  PoemDetailView.swift
-//  PoemApp
-//
-//  Created by Anuththara Divarathna on 2024-11-27.
-//
+import SwiftUI
 
-import Foundation
+struct PoemDetailView: View {
+    let poem: Poem
+    
+    var body: some View {
+        VStack {
+            Text(poem.title)
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .padding()
+            
+            Text("- \(poem.author)")
+                .font(.title2)
+                .padding()
+            
+            Text(poem.content)
+                .font(.body)
+                .padding()
+            
+            Text(poem.details)
+                .font(.subheadline)
+                .padding()
+            
+            Spacer()
+        }
+        .navigationTitle("Poem Details")
+        .background(Color.black.edgesIgnoringSafeArea(.all))
+    }
+}

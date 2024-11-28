@@ -1,24 +1,25 @@
-//
-//  ContentView.swift
-//  PoemApp
-//
-//  Created by Anuththara Divarathna on 2024-11-27.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            TabView {
+                MotivationPoemView()
+                    .tabItem {
+                        Label("Motivation", systemImage: "star.fill")
+                    }
+                
+                LovePoemView()
+                    .tabItem {
+                        Label("Love", systemImage: "heart.fill")
+                    }
+                
+                SadPoemView()
+                    .tabItem {
+                        Label("Sad", systemImage: "cloud.fill")
+                    }
+            }
         }
-        .padding()
     }
 }
 
-#Preview {
-    ContentView()
-}

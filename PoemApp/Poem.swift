@@ -1,8 +1,10 @@
-//
-//  Poem.swift
-//  PoemApp
-//
-//  Created by Anuththara Divarathna on 2024-11-27.
-//
-
 import Foundation
+
+struct Poem: Identifiable {
+    let id = UUID()
+    let title: String
+    let author: String
+    let content: String
+    let details: String
+    let emoji: String
+}
