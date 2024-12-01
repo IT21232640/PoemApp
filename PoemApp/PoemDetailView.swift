@@ -8,23 +8,31 @@ struct PoemDetailView: View {
             Text(poem.title)
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                .padding()
+                .padding(.top)
+                .foregroundColor(.white)
             
             Text("- \(poem.author)")
                 .font(.title2)
                 .padding()
+                .foregroundColor(.white)
             
             Text(poem.content)
                 .font(.body)
                 .padding()
+                .foregroundColor(.white)
             
             Text(poem.details)
                 .font(.subheadline)
                 .padding()
+                .foregroundColor(.white)
             
             Spacer()
         }
-        .navigationTitle("Poem Details")
-        .background(Color.black.edgesIgnoringSafeArea(.all))
-    }
+        .padding()
+        .background(
+            LinearGradient(gradient: Gradient(colors: [Color.purple, Color.blue]),
+                           startPoint: .topLeading, endPoint: .bottomTrailing)
+                .edgesIgnoringSafeArea(.all)
+        )
+        .navigationTitle("Poem Details")    }
 }
